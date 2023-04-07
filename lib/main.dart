@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hive_example/screens/add_item.dart';
+import 'package:hive_example/service/local_db.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await LocalDB.openBox();
   runApp(const MyApp());
 }
 
@@ -11,11 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // home: 
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HiveExamplePage());
   }
 }
