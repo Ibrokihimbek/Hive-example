@@ -25,6 +25,7 @@ class _HiveExamplePageState extends State<HiveExamplePage> {
             child: TextFormField(
               controller: nameController,
             ),
+            
           ),
           ListTile(
             trailing: IconButton(
